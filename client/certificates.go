@@ -91,9 +91,9 @@ func getReqID(data string) (string, error) {
 
 }
 
-func (c *ADCSClient) buildCertificateRequest(csr string, template TemplateName, attributes string) (*http.Request, error) {
+func (c *ADCSClient) buildCertificateRequest(csr string, template string, attributes string) (*http.Request, error) {
 	// build the payload
-	certAttrib := "CertificateTemplate:" + string(template) + "\r\n"
+	certAttrib := "CertificateTemplate:" + template + "\r\n"
 
 	data := certBody{
 		Mode:             "newreq",
